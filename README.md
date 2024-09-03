@@ -32,6 +32,31 @@
 $ npm install
 ```
 
+```bash
+# setup docker container for mySQL DB
+npm run db:run
+```
+
+### mySQL DB Setup
+```bash
+#setup mysql_native_password
+docker exec -it mysql_nestjs mysql -u root -p
+# enter 'rootpassword' when prompted
+```
+
+Run the following commands
+```sql
+ALTER USER 'admin'@'%' IDENTIFIED WITH mysql_native_password BY 'admin';
+FLUSH PRIVILEGES;
+
+exit
+```
+
+```bash
+# restart the container to apply changes
+docker-compose restart mysql
+```
+
 ## Compile and run the project
 
 ```bash

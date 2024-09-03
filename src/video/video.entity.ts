@@ -23,14 +23,12 @@ export class Video {
   playlist: Playlist;
 
   @CreateDateColumn({
-    type: 'bigint',
-    default: () => 'EXTRACT(EPOCH FROM NOW()) * 1000',
+    type: 'timestamp',
   })
-  createdAt: number;
+  createdAt: Date;
 
   @UpdateDateColumn({
-    type: 'bigint',
-    default: () => 'EXTRACT(EPOCH FROM NOW()) * 1000',
+    type: 'timestamp',
   })
-  updatedAt: number;
+  updatedAt: Date;
 }

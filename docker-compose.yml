@@ -1,4 +1,3 @@
-# File: docker-compose.yml
 version: '3.8'
 
 services:
@@ -10,8 +9,10 @@ services:
       MYSQL_DATABASE: video_service
       MYSQL_USER: admin
       MYSQL_PASSWORD: admin
+      MYSQL_ROOT_HOST: '%'
     ports:
       - "3306:3306"
+    command: --default-authentication-plugin=mysql_native_password
     volumes:
       - mysql_data:/var/lib/mysql
     networks:
