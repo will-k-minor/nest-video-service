@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Playlist } from './playlist/playlist.entity';
 import { User } from './user/user.entity';
+import { UsersModule } from './user/user.module';
+import { PlaylistsModule } from './playlist/playlist.module';
 
 @Module({
   imports: [
@@ -15,8 +17,8 @@ import { User } from './user/user.entity';
       entities: [User, Playlist],
       synchronize: true,
     }),
-    // UsersModule,
-    // PlaylistsModule,
+    UsersModule,
+    PlaylistsModule,
   ],
 })
 export class AppModule {}
