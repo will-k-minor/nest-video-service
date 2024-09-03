@@ -32,12 +32,13 @@
 $ npm install
 ```
 
+### mySQL DB Setup
+
 ```bash
 # setup docker container for mySQL DB
 npm run db:run
 ```
 
-### mySQL DB Setup
 ```bash
 #setup mysql_native_password
 docker exec -it mysql_nestjs mysql -u root -p
